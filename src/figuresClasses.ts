@@ -12,12 +12,12 @@ export class Triangle implements Figure {
 
   constructor(
     public color: Color,
-    public a = 0,
-    public b = 0,
-    public c = 0,
+    public a: number,
+    public b: number,
+    public c: number,
   ) {
     if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
-      throw new Error('bad values');
+      throw new Error('Triangle sides must be greater than zero');
     }
 
     if (
@@ -25,7 +25,7 @@ export class Triangle implements Figure {
       this.a + this.c <= this.b ||
       this.b + this.c <= this.a
     ) {
-      throw new Error('not a triangle with this values');
+      throw new Error('Not a triangle with this values');
     }
   }
 
@@ -50,10 +50,10 @@ export class Circle implements Figure {
 
   constructor(
     public color: Color,
-    public radius = 0,
+    public radius: number,
   ) {
     if (this.radius <= 0) {
-      throw new Error('not a circle');
+      throw new Error('Circle radius must be greater than zero');
     }
   }
 
@@ -71,11 +71,11 @@ export class Rectangle implements Figure {
 
   constructor(
     public color: Color,
-    public width: 0,
-    public height: 0,
+    public width: number,
+    public height: number,
   ) {
     if (this.width <= 0 || this.height <= 0) {
-      throw new Error('not a rectangle');
+      throw new Error('Rectangle sides must be greater than zero');
     }
   }
 
